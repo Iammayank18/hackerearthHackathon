@@ -11,7 +11,10 @@ const Addbill = () => {
   });
   const addBill = async (e) => {
     e.preventDefault();
-    const response = await axios.post("/api/addBill", datatable);
+    const response = await axios.post(
+      "https://hackerearth-billing.herokuapp.com/api/addBill",
+      datatable
+    );
     console.log(response.data);
     if (response.data.status === "success") {
       toast.success("Bill added successfully");

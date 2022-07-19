@@ -62,60 +62,13 @@ export const Home = () => {
         width: 50,
       },
     ],
-    rows: [
-      // data.map((item, index) => {
-      //   return {
-      //     s_no: index + 1,
-      //     Bill_date: item.billdate,
-      //     paiddate: item.Paid_date,
-      //     unitconsume: item.Unit_consume,
-      //     startdate: item.Start_date,
-      //     Amount: item.amount,
-      //     edit: (
-      //       <button
-      //         className="btn btn-primary"
-      //         onClick={() => {
-      //           edit(item.id);
-      //         }}
-      //       >
-      //         Edit
-      //       </button>
-      //     ),
-      //     delete: (
-      //       <button
-      //         className="btn btn-danger"
-      //         onClick={() => {
-      //           deleteData(item.id);
-      //         }}
-      //       >
-      //         Delete
-      //       </button>
-      //     ),
-      //   };
-      // }),
-      // {
-      //   s_no: "1",
-      //   Bill_date: "System Architect",
-      //   Paid_date: "Edinburgh",
-      //   Unit_consume: "61",
-      //   Start_date: "2011/04/25",
-      //   Amount: "$320",
-      //   edit: (
-      //     <button className="btn btn-primary">
-      //       <i class="fa-regular fa-pen-to-square"></i>
-      //     </button>
-      //   ),
-      //   delete: (
-      //     <button className="btn btn-danger">
-      //       <i class="fa-solid fa-trash-can"></i>
-      //     </button>
-      //   ),
-      // },
-    ],
+    rows: [],
   });
 
   const fetchBills = async () => {
-    const response = await axios.get("/api/getbills");
+    const response = await axios.get(
+      "https://hackerearth-billing.herokuapp.co/api/getbills"
+    );
     console.log(response.data.bills);
 
     setData(response.data.bills);
@@ -157,7 +110,7 @@ export const Home = () => {
   const deleteData = (id) => {
     console.log(id);
     axios
-      .delete(`/api/delete/${id}`)
+      .delete(`https://hackerearth-billing.herokuapp.com/api/delete/${id}`)
       .then((res) => {
         console.log(res);
         toast.success("Bill deleted successfully");
@@ -171,7 +124,9 @@ export const Home = () => {
   const edit = async (id) => {
     $("#editBill").css("display", "block");
     sessionStorage.setItem("id", id);
-    const response = await axios.get(`/api/edit/${id}`);
+    const response = await axios.get(
+      `https://hackerearth-billing.herokuapp.com/api/edit/${id}`
+    );
     console.log(response.data.bill);
     $("#ebilldate").val(response.data.bill.billdate);
     $("#epaiddate").val(response.data.bill.paiddate);
@@ -188,7 +143,10 @@ export const Home = () => {
     };
     const id = sessionStorage.getItem("id");
 
-    const response = await axios.put(`/api/edit/${id}`, jsondata);
+    const response = await axios.put(
+      `https://hackerearth-billing.herokuapp.com/api/edit/${id}`,
+      jsondata
+    );
     console.log(response.data);
     if (response.data.status === "success") {
       toast.success("Bill updated successfully");
