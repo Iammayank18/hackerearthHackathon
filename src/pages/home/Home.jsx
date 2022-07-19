@@ -159,7 +159,7 @@ export const Home = () => {
     <div className="home__container">
       <div className="container">
         <div className="text-center">
-          <h3>Bills</h3>
+          <h3>All Bills</h3>
         </div>
         <Editbill updateBill={updateBill} />
         <div className="container mt-5">

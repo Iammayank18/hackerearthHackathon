@@ -9,6 +9,11 @@ const Editbill = ({ updateBill }) => {
   });
   return (
     <div className="container w-50 p-4 mt-5 addbill__con" id="editBill">
+      <div className="container">
+        <div className="text-center">
+          <h3>Edit Bill</h3>
+        </div>
+      </div>
       <form>
         <div class="mb-3">
           <label for="billdate" class="form-label">

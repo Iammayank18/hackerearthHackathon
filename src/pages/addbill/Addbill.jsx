@@ -2,6 +2,7 @@ import React from "react";
 import "./Addbill.css";
 import axios from "axios";
 import { toast } from "react-toastify";
+
 const Addbill = () => {
   const [datatable, setDatatable] = React.useState({
     billdate: "",
@@ -28,6 +29,11 @@ const Addbill = () => {
 
   return (
     <div className="container w-50 p-4 mt-5 addbill__con">
+      <div className="container">
+        <div className="text-center">
+          <h3>Add Bill</h3>
+        </div>
+      </div>
       <form onSubmit={addBill}>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">
