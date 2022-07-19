@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import { toast } from "react-toastify";
 import Editbill from "../editbill/Editbill";
 export const Home = () => {
+  document.title = "Home";
   const [data, setData] = React.useState([]);
 
   const [datatable, setDatatable] = React.useState({

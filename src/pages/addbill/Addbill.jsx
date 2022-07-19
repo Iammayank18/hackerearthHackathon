@@ -4,6 +4,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 const Addbill = () => {
+  document.title = "Add bills";
   const [datatable, setDatatable] = React.useState({
     billdate: "",
     paiddate: "",
