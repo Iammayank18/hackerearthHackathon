@@ -138,7 +138,10 @@ export const Home = () => {
     };
     const id = sessionStorage.getItem("id");
 
-    const response = await axios.put(`/api/edit/${id}`, jsondata);
+    const response = await axios.put(
+      `https://hackerearth-billing.herokuapp.com/api/edit/${id}`,
+      jsondata
+    );
     console.log(response.data);
     if (response.data.status === "success") {
       toast.success("Bill updated successfully");
