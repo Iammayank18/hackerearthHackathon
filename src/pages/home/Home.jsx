@@ -37,12 +37,7 @@ export const Home = () => {
         sort: "asc",
         width: 100,
       },
-      {
-        label: "Start_date",
-        field: "Start_date",
-        sort: "disabled",
-        width: 150,
-      },
+
       {
         label: "Amount",
         field: "Amount",
@@ -67,7 +62,7 @@ export const Home = () => {
 
   const fetchBills = async () => {
     const response = await axios.get(
-      "https://hackerearth-billing.herokuapp.co/api/getbills"
+      "https://hackerearth-billing.herokuapp.com/api/getbills"
     );
     console.log(response.data.bills);
 
@@ -143,10 +138,7 @@ export const Home = () => {
     };
     const id = sessionStorage.getItem("id");
 
-    const response = await axios.put(
-      `https://hackerearth-billing.herokuapp.com/api/edit/${id}`,
-      jsondata
-    );
+    const response = await axios.put(`/api/edit/${id}`, jsondata);
     console.log(response.data);
     if (response.data.status === "success") {
       toast.success("Bill updated successfully");
