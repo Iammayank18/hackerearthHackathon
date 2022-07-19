@@ -1,0 +1,66 @@
+body {
+  background-color: #041c32 !important;
+  color: white !important;
+}
+
+.form-control {
+  border: none !important;
+}
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+input[type="url"],
+input[type="search"],
+input[type="date"],
+input[type="time"],
+textarea {
+  background-color: #041c32 !important;
+  color: white !important;
+  border-bottom: 1px solid #044b51 !important;
+  border-radius: 0;
+}
+::placeholder {
+  color: #949494 !important;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus {
+  background-color: #041c32 !important;
+  color: white !important;
+  border-bottom: 1px solid #044b51 !important;
+  box-shadow: none !important;
+}
+
+.btn-primary {
+  background-color: #1597bb !important;
+  border-color: #041c32 !important;
+  color: white !important;
+}
+
+.navbar a {
+  color: white !important;
+}
+
+table {
+  color: white !important;
+}
+
+#editBill {
+  display: none;
+  position: fixed;
+  z-index: 999999999999;
+  left: 360px;
+  top: 88px;
+  width: 70%;
+  height: auto;
+  overflow: auto;
+  background-color: #041c32 !important;
+  padding: 10px;
+  margin: auto;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
