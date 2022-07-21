@@ -49,6 +49,7 @@ table {
 }
 
 #editBill {
+  display: none;
   position: fixed;
   /* Stay in place */
   z-index: 9999;
