@@ -14,7 +14,7 @@ const Addbill = () => {
   const addBill = async (e) => {
     e.preventDefault();
     const response = await axios.post(
-      "https://hackerearth-billing.herokuapp.com/api/addBill",
+      "https://defiant-cyan-barnacle.cyclic.app/api/addBill",
       datatable
     );
     console.log(response.data);

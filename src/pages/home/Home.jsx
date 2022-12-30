@@ -63,7 +63,7 @@ export const Home = () => {
 
   const fetchBills = async () => {
     const response = await axios.get(
-      "https://hackerearth-billing.herokuapp.com/api/getbills"
+      "https://defiant-cyan-barnacle.cyclic.app/api/getbills"
     );
     console.log(response.data.bills);
 
@@ -106,7 +106,7 @@ export const Home = () => {
   const deleteData = (id) => {
     console.log(id);
     axios
-      .delete(`https://hackerearth-billing.herokuapp.com/api/delete/${id}`)
+      .delete(`https://defiant-cyan-barnacle.cyclic.app/api/delete/${id}`)
       .then((res) => {
         console.log(res);
         toast.success("Bill deleted successfully");
@@ -121,7 +121,7 @@ export const Home = () => {
     $("#editBill").css("display", "block");
     sessionStorage.setItem("id", id);
     const response = await axios.get(
-      `https://hackerearth-billing.herokuapp.com/api/edit/${id}`
+      `https://defiant-cyan-barnacle.cyclic.app/api/edit/${id}`
     );
     console.log(response.data.bill);
     $("#ebilldate").val(response.data.bill.billdate);
@@ -140,7 +140,7 @@ export const Home = () => {
     const id = sessionStorage.getItem("id");
 
     const response = await axios.put(
-      `https://hackerearth-billing.herokuapp.com/api/edit/${id}`,
+      `https://defiant-cyan-barnacle.cyclic.app/api/edit/${id}`,
       jsondata
     );
     console.log(response.data);
